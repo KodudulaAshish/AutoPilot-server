@@ -17,7 +17,7 @@ app.post('/auth', async (req, res) => {
   logInUserController(req, res);
 })
 
-app.post("/chat", verifyToken, fileStorage.single('file'), async (req, res) => {
+app.post("/chat", fileStorage.single('file'), async (req, res) => {
   chatWithGeminiController(req, res);
 });
 
